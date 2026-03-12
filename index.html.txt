@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axion | Tech Solutions</title>
+    <style>
+        :root {
+            --primary: #38bdf8; /* Cyan from Logo */
+            --bg: #020617;      /* Ultra Dark Navy */
+            --card-bg: #1e293b; /* Slate Gray */
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: white;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        /* --- Header Section --- */
+        header {
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 80%;
+            z-index: 1000;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: 3px;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            border-left: 3px solid var(--primary);
+            padding-left: 15px;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Services Grid --- */
+        .services {
+            padding: 5rem 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(56, 189, 248, 0.1);
+            transition: 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+        }
+
+        .service-card h3 { color: var(--primary); margin-top: 0; }
+
+        /* --- Buttons --- */
+        .btn-main {
+            padding: 15px 40px;
+            background: var(--primary);
+            color: var(--bg);
+            font-weight: bold;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .btn-main:hover { opacity: 0.8; transform: scale(1.05); }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo-text">AXION</div>
+    <div style="font-size: 0.9rem; color: #94a3b8;">Home | Projects | Services | Contact</div>
+</header>
+
+<section class="hero">
+    <h1>AXION</h1>
+    <div class="tagline">Engineering Digital Excellence</div>
+    <p style="max-width: 700px; font-size: 1.1rem; color: #cbd5e1;">
+        Hum har business ko digital banate hain. From custom ERP systems to modern cloud applications, we build technology that scales with you.
+    </p>
+    <a href="#" class="btn-main">Get a Free Consultation</a>
+</section>
+
+<section class="services">
+    <div class="service-card">
+        <h3>Web Development</h3>
+        <p>Custom websites aur modern web apps (React, Python, HTML5) jo aapki brand ko ek nayi pehchan deti hain.</p>
+    </div>
+    <div class="service-card">
+        <h3>ERP & CRM Systems</h3>
+        <p>School management, inventory, aur business automation ke liye mukammal cloud-based programs.</p>
+    </div>
+    <div class="service-card">
+        <h3>Cloud Integration</h3>
+        <p>Aapka data, har jagah. Safe aur fast cloud hosting solutions jo har waqt accessible hon.</p>
+    </div>
+</section>
+
+</body>
+</html>
