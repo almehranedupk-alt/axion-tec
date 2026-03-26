@@ -3,137 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Axion | Tech Solutions</title>
+    <title>Axion-Tec | Engineering Digital Excellence</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary: #38bdf8; /* Cyan from Logo */
-            --bg: #020617;      /* Ultra Dark Navy */
-            --card-bg: #1e293b; /* Slate Gray */
+            --primary-blue: #1a4a7a; /* Aapke logo ka deep blue */
+            --accent-blue: #2c7bb6;  /* Light blue accent */
+            --silver: #bdc3c7;       /* Logo ka silver/grey */
+            --dark-bg: #101820;      /* Modern dark background */
+            --card-bg: #1a252f;      /* Slightly lighter dark for cards */
+            --text-light: #f4f7f6;   /* Light text */
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
-            background-color: var(--bg);
-            color: white;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
             scroll-behavior: smooth;
         }
 
-        /* --- Header Section --- */
+        /* --- Header & Navigation --- */
         header {
-            padding: 1.5rem 10%;
+            background: rgba(26, 37, 47, 0.95);
+            padding: 1rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(2, 6, 23, 0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 80%;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
             z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-container img {
+            height: 50px; /* Logo height */
+            margin-right: 15px;
         }
 
         .logo-text {
             font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--primary);
-            letter-spacing: 3px;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .logo-text span {
+            color: var(--silver);
+            margin-left: 2px;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-blue);
         }
 
         /* --- Hero Section --- */
         .hero {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #1a252f 100%);
+            padding: 120px 5% 100px;
             text-align: center;
-            padding: 0 10%;
+            border-bottom: 1px solid rgba(189, 195, 199, 0.1);
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            background: linear-gradient(to right, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            color: var(--text-light);
         }
 
-        .tagline {
-            font-size: 1.2rem;
-            color: #94a3b8;
-            border-left: 3px solid var(--primary);
-            padding-left: 15px;
-            margin-bottom: 2rem;
+        .hero h1 span {
+            color: var(--accent-blue);
         }
 
-        /* --- Services Grid --- */
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--silver);
+        }
+
+        .btn-main {
+            padding: 15px 35px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(26, 74, 122, 0.3);
+        }
+
+        .btn-main:hover {
+            background-color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        /* --- Services Section --- */
         .services {
-            padding: 5rem 10%;
+            padding: 100px 5%;
+            background-color: var(--dark-bg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            color: var(--text-light);
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-blue);
+        }
+
+        .service-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
+            padding: 40px;
+            border-radius: 10px;
             background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 15px;
-            border: 1px solid rgba(56, 189, 248, 0.1);
-            transition: 0.4s ease;
+            text-align: center;
+            transition: 0.4s;
+            border: 1px solid rgba(189, 195, 199, 0.05);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            border-color: var(--primary);
-            box-shadow: 0 10px 30px -10px rgba(56, 189, 248, 0.3);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
-        .service-card h3 { color: var(--primary); margin-top: 0; }
+        .service-card i {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            margin-bottom: 25px;
+        }
 
-        /* --- Buttons --- */
-        .btn-main {
-            padding: 15px 40px;
-            background: var(--primary);
-            color: var(--bg);
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--text-light);
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: var(--silver);
+            font-size: 1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--card-bg);
+            color: var(--silver);
+            padding: 50px 5% 30px;
+            text-align: center;
+            border-top: 1px solid rgba(189, 195, 199, 0.1);
+        }
+
+        .footer-content {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
             font-weight: bold;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: 0.3s;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            display: block;
         }
-        
-        .btn-main:hover { opacity: 0.8; transform: scale(1.05); }
+
+        .footer-contact {
+            margin-bottom: 20px;
+        }
+
+        .footer-contact span {
+            margin: 0 15px;
+            font-size: 1rem;
+        }
+
+        .footer-contact i {
+            margin-right: 8px;
+            color: var(--accent-blue);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            nav { display: none; } /* Mobile menu can be added later */
+            .logo-text { font-size: 1.5rem; }
+            .logo-container img { height: 40px; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo-text">AXION</div>
-    <div style="font-size: 0.9rem; color: #94a3b8;">Home | Projects | Services | Contact</div>
-</header>
+    <header>
+        <a href="#" class="logo-container">
+            <img src="logo_Axion.png" alt="Axion-Tec Logo">
+            <div class="logo-text">AXION<span>TEC</span></div>
+        </a>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-<section class="hero">
-    <h1>AXION</h1>
-    <div class="tagline">Engineering Digital Excellence</div>
-    <p style="max-width: 700px; font-size: 1.1rem; color: #cbd5e1;">
-        Hum har business ko digital banate hain. From custom ERP systems to modern cloud applications, we build technology that scales with you.
-    </p>
-    <a href="#" class="btn-main">Get a Free Consultation</a>
-</section>
+    <section class="hero">
+        <h1>Engineering <span>Digital Excellence</span></h1>
+        <p>Providing smart, data-driven software solutions. We bridge the gap between traditional management and the modern digital era.</p>
+        <a href="#contact" class="btn-main">Get Free Consultation</a>
+    </section>
 
-<section class="services">
-    <div class="service-card">
-        <h3>Web Development</h3>
-        <p>Custom websites aur modern web apps (React, Python, HTML5) jo aapki brand ko ek nayi pehchan deti hain.</p>
-    </div>
-    <div class="service-card">
-        <h3>ERP & CRM Systems</h3>
-        <p>School management, inventory, aur business automation ke liye mukammal cloud-based programs.</p>
-    </div>
-    <div class="service-card">
-        <h3>Cloud Integration</h3>
-        <p>Aapka data, har jagah. Safe aur fast cloud hosting solutions jo har waqt accessible hon.</p>
-    </div>
-</section>
+    <section id="services" class="services">
+        <div class="section-title">
+            <h2>Our Core Services</h2>
+        </div>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-school"></i>
+                <h3>School ERP</h3>
+                <p>Advanced Management Systems for fees, student records, and academic data automation.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-code"></i>
+                <h3>Custom Software</h3>
+                <p>Tailor-made applications designed to solve your specific business challenges.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-microchip"></i>
+                <h3>Data Automation</h3>
+                <p>Converting manual processes into smart, automated one-click solutions using Python.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <span class="footer-logo">AXIONTEC</span>
+            <div class="footer-contact">
+                <span><i class="fas fa-envelope"></i> info@axiontech.com</span>
+                <span><i class="fas fa-globe"></i> www.axiontech.com</span>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Axion-Tec. All Rights Reserved. Built with Passion in Pakistan.</p>
+    </footer>
 
 </body>
 </html>
